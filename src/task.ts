@@ -88,7 +88,7 @@ export function handleKeyInput(wsAdapter: WsAdapter): KeypressHandler {
       type: 'text',
       name: 'pattern',
       message: 'Enter a glob pattern',
-      initial: 'src/**/*.{ts,js}',
+      initial: 'src/**/*.{ts,tsx,js,jsx}',
     });
     if (!pattern) {
       return false;
@@ -99,7 +99,7 @@ export function handleKeyInput(wsAdapter: WsAdapter): KeypressHandler {
   };
 
   const showRamUsageLocal = async () => {
-    const pattern = '**/*.{js,ts,script}';
+    const pattern = '**/*.{js,jsx,ts,tsx,script}';
     const files = await fg(pattern, { cwd: wsAdapter.server.config.root });
     files.sort();
     // filter out non-script files, dts, and deadends

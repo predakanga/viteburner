@@ -277,7 +277,10 @@ export class WsAdapter {
             return (
               ignoreTs &&
               resolvedLocation.endsWith('.js') &&
-              fs.existsSync(resolvedLocation.substring(0, resolvedLocation.length - 3) + '.ts')
+              (
+                fs.existsSync(resolvedLocation.substring(0, resolvedLocation.length - 3) + '.ts') ||
+                fs.existsSync(resolvedLocation.substring(0, resolvedLocation.length - 3) + '.tsx')
+              )
             );
           };
           // ignoreSourcemap

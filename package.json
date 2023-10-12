@@ -15,7 +15,7 @@
   },
   "typings": "dist/typings/index.d.ts",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && copyfiles --flat node_modules\\@vitejs\\plugin-react\\dist\\refreshUtils.js dist",
     "test": "npm run lint && npm run test:spec",
     "test:spec": "vitest run",
     "test:playground": "vite-node ./src/entry.ts -- --cwd ./playground",
@@ -48,6 +48,7 @@
     "@types/ws": "^8.5.4",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",

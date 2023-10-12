@@ -59,6 +59,7 @@
     "vitest": "^0.27.0"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^4.1.0",
     "acorn": "^8.8.2",
     "cac": "^6.7.14",
     "chokidar": "^3.5.3",
@@ -69,6 +70,7 @@
     "picocolors": "^1.0.0",
     "prompts": "^2.4.2",
     "unconfig": "^0.3.7",
+    "vite-plugin-externals": "^0.6.2",
     "ws": "^8.12.1",
     "zod": "^3.20.6"
   },

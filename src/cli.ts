@@ -41,6 +41,7 @@ export async function startDev(options: any) {
       react({jsxRuntime: 'classic'}),
       viteExternalsPlugin({
         react: 'React',
+        'react-dom': 'ReactDOM',
       }),
       viteburnerPlugin(resolveInlineConfig)],
   });

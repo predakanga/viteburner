@@ -121,7 +121,7 @@ const exports$1 = {
 };
 const typings = "dist/typings/index.d.ts";
 const scripts = {
-  build: "vite build && copyfiles --flat node_modules\\@vitejs\\plugin-react\\dist\\refreshUtils.js dist",
+  build: "vite build && copyfiles --flat node_modules/@vitejs/plugin-react/dist/refreshUtils.js dist",
   test: "npm run lint && npm run test:spec",
   "test:spec": "vitest run",
   "test:playground": "vite-node ./src/entry.ts -- --cwd ./playground",
@@ -147,6 +147,8 @@ const bugs = {
 };
 const homepage = "https://github.com/Tanimodori/viteburner#readme";
 const devDependencies = {
+  "@babel/core": "^7.23.2",
+  "@babel/preset-typescript": "^7.23.2",
   "@types/estree": "^1.0.0",
   "@types/micromatch": "^4.0.2",
   "@types/node": "^18.14.1",
@@ -4058,7 +4060,7 @@ function addRefreshWrapper(code, id) {
 let babel;
 async function loadBabel() {
   if (!babel) {
-    babel = await Promise.resolve().then(() => require("./index-aee87c66.js")).then((n) => n.index);
+    babel = await Promise.resolve().then(() => require("./index-1efa76ae.js")).then((n) => n.index);
   }
   return babel;
 }
@@ -4292,7 +4294,8 @@ async function startDev(options) {
     plugins: [
       viteReact({ jsxRuntime: "classic" }),
       viteExternalsPlugin({
-        react: "React"
+        react: "React",
+        "react-dom": "ReactDOM"
       }),
       viteburnerPlugin(resolveInlineConfig)
     ]

@@ -4,7 +4,7 @@ import pkg from '../package.json';
 import { ViteBurnerInlineConfig } from './types';
 import { createServer } from 'vite';
 import { viteburnerPlugin } from './plugins/viteburner';
-import { viteExternalsPlugin } from 'vite-plugin-externals'
+import { viteExternalsPlugin } from 'vite-plugin-externals';
 import react from '@vitejs/plugin-react';
 
 const cli = cac('viteburner');

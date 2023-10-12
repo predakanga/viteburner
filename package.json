@@ -15,7 +15,7 @@
   },
   "typings": "dist/typings/index.d.ts",
   "scripts": {
-    "build": "vite build && copyfiles --flat node_modules\\@vitejs\\plugin-react\\dist\\refreshUtils.js dist",
+    "build": "vite build && copyfiles --flat node_modules/@vitejs/plugin-react/dist/refreshUtils.js dist",
     "test": "npm run lint && npm run test:spec",
     "test:spec": "vitest run",
     "test:playground": "vite-node ./src/entry.ts -- --cwd ./playground",
@@ -41,6 +41,8 @@
   },
   "homepage": "https://github.com/Tanimodori/viteburner#readme",
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
     "@types/estree": "^1.0.0",
     "@types/micromatch": "^4.0.2",
     "@types/node": "^18.14.1",
